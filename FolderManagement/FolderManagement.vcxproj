@@ -139,10 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BIOS_Parameter_Block.cpp" />
+    <ClCompile Include="FAT32_Volume_Bootsector.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="ReadSector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fat32_format.h" />
+    <ClInclude Include="BIOS_Parameter_Block.h" />
+    <ClInclude Include="FAT32_Volume_Bootsector.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="ReadSector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

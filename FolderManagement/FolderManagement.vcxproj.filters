@@ -18,9 +18,30 @@
     <ClCompile Include="ReadSector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BIOS_Parameter_Block.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FAT32_Volume_Bootsector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fat32_format.h">
+    <ClInclude Include="ReadSector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BIOS_Parameter_Block.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FAT32_Volume_Bootsector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
