@@ -8,20 +8,20 @@ class ReadSector {
 private:
 	LPCWSTR drive = L"";
 	BYTE* sector = NULL;
-	int readPoint;
+	int bytsRead;
 
 public:
-	int readSector(LPCWSTR, int, BYTE*);
+	int readSector(LPCWSTR, int, int);
 
 	LPCWSTR getDrive();
 	BYTE* getSector();
-	int getReadPoint();
+	int getBytsRead();
 	void setDrive(LPCWSTR);
 	void setReadPoint(int);
 
 
 //Constructor and destructor
 	ReadSector();
-	ReadSector(LPCWSTR, int, BYTE*);
+	ReadSector(LPCWSTR, int, int);
 	~ReadSector();
 };

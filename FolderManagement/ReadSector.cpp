@@ -2,16 +2,16 @@
 #include "ReadSector.h"
 #include <stdio.h>
 
-int ReadSector::readSector(LPCWSTR  drive, int readPoint, BYTE* sector)
+int ReadSector::readSector(LPCWSTR drive, int readPoint, int bytsRead)
 {
-    if (this->readPoint != readPoint) {
-        this->readPoint = readPoint;
+    if (this->bytsRead != bytsRead) {
+        this->bytsRead = bytsRead;
 
         if (this->sector) {
             delete[] this->sector;
         }
 
-        this->sector = new BYTE[this->readPoint];
+        this->sector = new BYTE[this->bytsRead];
     }
 
 
@@ -31,21 +31,20 @@ int ReadSector::readSector(LPCWSTR  drive, int readPoint, BYTE* sector)
     if (device == INVALID_HANDLE_VALUE) // Open Error
     {
         printf("CreateFile: %u\n", GetLastError());
-        CloseHandle(device);
+        //CloseHandle(device);
         return 1;
     }
 
     SetFilePointer(device, readPoint, NULL, FILE_BEGIN);//Set a Point to Read
 
-    if (!ReadFile(device, sector, 512, &bytesRead, NULL))
+    if (!ReadFile(device, this->sector, BUFFER_SIZE, &bytesRead, NULL))
     {
         printf("ReadFile: %u\n", GetLastError());
-        CloseHandle(device);
         return 2;
     }
     else
     {
-        printf("Success!\n");
+        //printf("Success!\n");
         CloseHandle(device);
     }
 
@@ -59,29 +58,29 @@ LPCWSTR ReadSector::getDrive() {
 BYTE* ReadSector::getSector() {
     return sector;
 }
-int ReadSector::getReadPoint() {
-    return readPoint;
+int ReadSector::getBytsRead() {
+    return bytsRead;
 }
 void ReadSector::setDrive(LPCWSTR drive) {
     this->drive = drive;
 }
 void ReadSector::setReadPoint(int readPoint) {
-    this->readPoint = readPoint;
+    this->bytsRead = readPoint;
     if (this->sector) {
         delete[] this->sector;
     }
 
-    this->sector = new BYTE[this->readPoint];
+    this->sector = new BYTE[this->bytsRead];
 }
 
 
 
 ReadSector::ReadSector(){}
-ReadSector::ReadSector(LPCWSTR drive, int readPoint, BYTE* sector) {
-    this->readPoint = readPoint;
-    this->sector = new BYTE[this->readPoint];
+ReadSector::ReadSector(LPCWSTR drive, int readPoint, int bytsRead) {
+    this->bytsRead = bytsRead;
+    this->sector = new BYTE[this->bytsRead];
 
-    if (!readSector(drive, readPoint, this->sector)) {
+    if (!readSector(drive, readPoint, bytsRead)) {
         this->drive = drive;
     }
 
@@ -95,11 +94,3 @@ ReadSector::~ReadSector() {
 }
 
 
-int main(int argc, char ** argv)
-{
-    ReadSector a;
-    BYTE* sector = new BYTE[BUFFER_SIZE];
-    a.readSector(L"\\\\.\\E:", 0, sector);
-    //ReadSector(L"\\\\.\\E:",0, sector);
-    return 0;
-}

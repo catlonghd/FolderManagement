@@ -139,16 +139,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BIOS_Parameter_Block.cpp" />
-    <ClCompile Include="FAT32_Volume_Bootsector.cpp" />
+    <ClCompile Include="Bootsector.cpp" />
+    <ClCompile Include="FAT32_BIOS_Parameter_Block.cpp" />
+    <ClCompile Include="FAT32_Bootsector.cpp" />
+    <ClCompile Include="FAT32_Format.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NTFS_BIOS_Parameter_Block.cpp" />
+    <ClCompile Include="NTFS_Format.cpp" />
+    <ClCompile Include="NTFS_Partition_Bootsector.cpp" />
+    <ClCompile Include="PartitionFactory.cpp" />
     <ClCompile Include="ReadSector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BIOS_Parameter_Block.h" />
-    <ClInclude Include="FAT32_Volume_Bootsector.h" />
+    <ClInclude Include="Abstract_Format.h" />
+    <ClInclude Include="Bootsector.h" />
+    <ClInclude Include="FAT32_BIOS_Parameter_Block.h" />
+    <ClInclude Include="FAT32_Bootsector.h" />
+    <ClInclude Include="FAT32_Format.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="NTFS_BIOS_Parameter_Block.h" />
+    <ClInclude Include="NTFS_Format.h" />
+    <ClInclude Include="NTFS_Partition_Bootsector.h" />
+    <ClInclude Include="PartitionFactory.h" />
     <ClInclude Include="ReadSector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
