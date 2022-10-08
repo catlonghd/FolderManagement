@@ -1,6 +1,7 @@
 #include "Helper.h"
+#include "FAT32_Bootsector.h"
 
-
+void FAT32_Bootsector::readSector(BYTE*& sector){
 	BPB.readSector(sector);
 	BS_DrvNum = hexToDec(sector, 0x40, 1);
 	BS_Reversed = hexToDec(sector, 0x41, 1);
@@ -8,7 +9,7 @@
 	BS_VolID = hexToDec(sector, 0x43, 4);
 }
 
-
+string FAT32_Bootsector::output(){
 	stringstream ss;
 	ss << "- Version/OS name: " << BS_OEMName << endl;
 	ss << BPB.output() << endl;
@@ -28,10 +29,14 @@
 }
 
 
+FAT32_Bootsector::FAT32_Bootsector(){}
 
+FAT32_Bootsector::FAT32_Bootsector(BYTE* sector){
 	readSector(sector);
 }
 
+
+FAT32_Bootsector::~FAT32_Bootsector(){}
 
 
 
