@@ -17,7 +17,7 @@ private:
 	int BS_endOfSectorMarker;	//Dấu hiệu kết thúc bootsector
 
 public:
-
+	FAT32_BIOS_Parameter_Block getBPB();
 	FAT32_Bootsector();
 	FAT32_Bootsector(BYTE*);
 	~FAT32_Bootsector();
