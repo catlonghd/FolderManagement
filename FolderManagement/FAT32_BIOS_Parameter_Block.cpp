@@ -2,6 +2,11 @@
 #include "Helper.h"
 #define _CRT_SECURE_NO_WARNINGS
 
+int FAT32_BIOS_Parameter_Block::getBPB_FATSz32() { return BPB_FATSz32;  };
+int FAT32_BIOS_Parameter_Block::getBPB_RsvdSecCnt() { return BPB_RsvdSecCnt; };
+int FAT32_BIOS_Parameter_Block::getBPB_BytsPerSec() { return BPB_BytsPerSec; };
+int FAT32_BIOS_Parameter_Block::getBPB_SecPerClus() { return BPB_SecPerClus; };
+
 void FAT32_BIOS_Parameter_Block::readSector(BYTE*& sector) {
 	BPB_BytsPerSec = hexToDec(sector, 0xB, 2);
 	BPB_SecPerClus = hexToDec(sector, 0xD, 1);

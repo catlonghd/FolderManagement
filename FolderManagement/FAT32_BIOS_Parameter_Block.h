@@ -27,6 +27,11 @@ private:
 	int BPB_Reversed;		//dành riêng
 
 public:
+	int getBPB_FATSz32();
+	int getBPB_RsvdSecCnt();
+	int getBPB_BytsPerSec();
+	int getBPB_SecPerClus();
+
 	FAT32_BIOS_Parameter_Block();
 	FAT32_BIOS_Parameter_Block(BYTE*);
 	~FAT32_BIOS_Parameter_Block();

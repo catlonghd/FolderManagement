@@ -1,6 +1,9 @@
 #include "Helper.h"
 #include "FAT32_Bootsector.h"
 
+FAT32_BIOS_Parameter_Block FAT32_Bootsector::getBPB() { return BPB; };
+
+
 void FAT32_Bootsector::readSector(BYTE*& sector){
 	BPB.readSector(sector);
 	BS_DrvNum = hexToDec(sector, 0x40, 1);

@@ -29,7 +29,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -139,30 +139,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Abstract_Entry.cpp" />
     <ClCompile Include="Bootsector.cpp" />
+    <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="FAT.cpp" />
     <ClCompile Include="FAT32_BIOS_Parameter_Block.cpp" />
     <ClCompile Include="FAT32_Bootsector.cpp" />
     <ClCompile Include="FAT32_Format.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="Long_Filename.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NTFS_BIOS_Parameter_Block.cpp" />
     <ClCompile Include="NTFS_Format.cpp" />
     <ClCompile Include="NTFS_Partition_Bootsector.cpp" />
     <ClCompile Include="PartitionFactory.cpp" />
+    <ClCompile Include="RDET.cpp" />
     <ClCompile Include="ReadSector.cpp" />
+    <ClCompile Include="SDET.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Abstract_Entry.h" />
     <ClInclude Include="Abstract_Format.h" />
     <ClInclude Include="Bootsector.h" />
+    <ClInclude Include="Entry.h" />
+    <ClInclude Include="FAT.h" />
     <ClInclude Include="FAT32_BIOS_Parameter_Block.h" />
     <ClInclude Include="FAT32_Bootsector.h" />
     <ClInclude Include="FAT32_Format.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="Long_Filename.h" />
     <ClInclude Include="NTFS_BIOS_Parameter_Block.h" />
     <ClInclude Include="NTFS_Format.h" />
     <ClInclude Include="NTFS_Partition_Bootsector.h" />
     <ClInclude Include="PartitionFactory.h" />
+    <ClInclude Include="RDET.h" />
     <ClInclude Include="ReadSector.h" />
+    <ClInclude Include="SDET.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
